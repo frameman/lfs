@@ -1,0 +1,15 @@
+#!/bin/bash
+a=$(pwd)
+sh /$a/env
+cd $LFS/sources/grep-3.8
+
+./configure --prefix=/usr \
+--host=$LFS_TGT
+
+make -j3 
+make DESTDIR=$LFS install
+
+make distclean
+
+echo "grep_finish" >> $/LFS/sources/install.log
+

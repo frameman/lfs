@@ -1,0 +1,16 @@
+#!/bin/bash
+a=$(pwd)
+sh /$a/env
+cd $LFS/sources/tar-1.34
+
+./configure --prefix=/usr                     \
+            --host=$LFS_TGT                   \
+            --build=$(build-aux/config.guess)
+
+make -j3
+make DESTDIR=$LFS install
+
+make distclean
+
+echo "tar_finish" >> $/LFS/sources/install.log
+

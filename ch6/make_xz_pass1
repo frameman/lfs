@@ -1,0 +1,20 @@
+#!/bin/bash
+a=$(pwd)
+sh /$a/env
+cd $LFS/sources/xz-5.2.9
+
+./configure --prefix=/usr                     \
+            --host=$LFS_TGT                   \
+            --build=$(build-aux/config.guess) \
+            --disable-static                  \
+            --docdir=/usr/share/doc/xz-5.2.9
+
+make -j3
+make DESTDIR=$LFS install
+make distclean
+rm -v $LFS/usr/lib/liblzma.la
+
+
+echo "xz_pass1_finish" >> $/LFS/sources/install.log
+
+
