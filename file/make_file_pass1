@@ -1,0 +1,28 @@
+#!/bin/bash
+sh /root/env
+cd $LFS/sources/file-5.43
+
+mkdir build
+pushd build
+  ../configure --disable-bzlib      \
+               --disable-libseccomp \
+               --disable-xzlib      \
+               --disable-zlib
+  make
+popd
+
+./configure --prefix=/usr --host=$LFS_TGT --build=$(./config.guess)
+
+make FILE_COMPILE=$(pwd)/build/src/file
+
+
+make DESTDIR=$LFS install
+
+rm -v $LFS/usr/lib/libmagic.la
+
+make distclean
+
+rm -rf build
+
+echo "file_pass_1_finish" >> $/LFS/sources/install.log
+

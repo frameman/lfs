@@ -1,0 +1,17 @@
+#!/bin/bash
+sh /root/env
+cd $LFS/sources/findutils-4.9.0
+
+
+./configure --prefix=/usr                   \
+            --localstatedir=/var/lib/locate \
+            --host=$LFS_TGT                 \
+            --build=$(build-aux/config.guess)
+
+make -j3
+
+make DESTDIR=$LFS install
+
+make distclean
+
+
