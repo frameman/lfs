@@ -35,5 +35,5 @@ echo "INPUT(-lncursesw)" > $LFS/usr/lib/libncurses.so
 make distclean
 rm -rf build
 
-echo "ncurses_1_finish" >> $/LFS/sources/install.log
+echo "ncurses_1_finish" >> $LFS/sources/install.log
 

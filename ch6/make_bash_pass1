@@ -17,4 +17,4 @@ ln -sv bash $LFS/bin/sh
 
 make distclean
 
-echo "bash_pass_1_finish" >> $/LFS/sources/install.log
+echo "bash_pass_1_finish" >> $LFS/sources/install.log

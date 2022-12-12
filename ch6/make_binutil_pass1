@@ -13,4 +13,9 @@ cd build
 
 make -j3
 make install
-make distclean
+
+cd ../ 
+rm -rf build
+
+echo "bintuils_pass1_finish" >> $LFS/sources/install.log
+

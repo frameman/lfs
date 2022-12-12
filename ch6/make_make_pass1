@@ -19,5 +19,5 @@ make DESTDIR=$LFS install
 
 make distclean
 
-echo "make_pass1_finish" >> $/LFS/sources/install.log
+echo "make_pass1_finish" >> $LFS/sources/install.log
 

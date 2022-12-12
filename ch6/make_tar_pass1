@@ -12,5 +12,5 @@ make DESTDIR=$LFS install
 
 make distclean
 
-echo "tar_finish" >> $/LFS/sources/install.log
+echo "tar_finish" >> $LFS/sources/install.log
 

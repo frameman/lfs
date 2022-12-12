@@ -51,8 +51,7 @@ cd ..
 cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
   `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/install-tools/include/limits.h
 
-cd build
-make distclean
+rm -rf build
 
-echo "gcc_pass_1_finish" >> $/LFS/sources/install.log
+echo "gcc_pass_1_finish" >> $LFS/sources/install.log
 

@@ -22,9 +22,7 @@ make DESTDIR=$LFS install
 
 rm -v $LFS/usr/lib/libmagic.la
 
-make distclean
-
 rm -rf build
 
-echo "file_pass_1_finish" >> $/LFS/sources/install.log
+echo "file_pass_1_finish" >> $LFS/sources/install.log
 

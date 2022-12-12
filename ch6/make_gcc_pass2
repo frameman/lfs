@@ -12,6 +12,8 @@ esac
 sed '/thread_header =/s/@.*@/gthr-posix.h/' \
    -i libgcc/Makefile.in libstdc++-v3/include/Makefile.in
 
+rm -rv build
+
 mkdir -v build
 cd       build
 
@@ -33,7 +35,7 @@ cd       build
     --disable-libvtv                               \
     --enable-languages=c,c++
 
-make
+make -j3
 
 make DESTDIR=$LFS install
 
@@ -41,4 +43,5 @@ ln -sv gcc $LFS/usr/bin/cc
 
 cd ../
 rm -rf build
+echo "gcc_pass2_finish" >> $LFS/sources/install.log
 

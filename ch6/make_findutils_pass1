@@ -16,6 +16,6 @@ make DESTDIR=$LFS install
 
 make distclean
 
-echo "findutils_finish" >> $/LFS/sources/install.log
+echo "findutils_finish" >> $LFS/sources/install.log
 
 

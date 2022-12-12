@@ -1,5 +1,4 @@
-#!/bin/bash
-#sh make_binutil_pass1 
+#!/bin/bash #sh make_binutil_pass1 
 #sh make_gcc_pass1
 #sh make_linux_API_header
 #sh make_glibc_pass1
@@ -11,13 +10,14 @@
 #sh make_file_pass1
 #sh make_findutils_pass1 
 #sh make_gawk_pass1
-sh make_grep	
-sh make_gzip_pass1
-sh make_make_pass1
-sh make_patch_pass1
-sh make_sed_pass1
-sh make_tar_pass1
-sh make_xz_pass1
-sh make_binutil_pass2 
+
+#sh make_grep	
+#sh make_gzip_pass1
+#sh make_make_pass1
+#sh make_patch_pass1
+#sh make_sed_pass1
+#sh make_tar_pass1
+#sh make_xz_pass1
+#sh make_binutil_pass2 
 sh make_gcc_pass2	
  

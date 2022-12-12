@@ -5,9 +5,11 @@ cd $LFS/sources/binutils-2.39
 
 
 sed '6009s/$add_dir//' -i ltmain.sh
+rm -rf build
 
 mkdir -v build
 cd       build
+
 
 ../configure                   \
     --prefix=/usr              \
@@ -19,10 +21,10 @@ cd       build
     --disable-werror           \
     --enable-64-bit-bfd
 
-make -j3
+make 
 make DESTDIR=$LFS install
 
-make distclean
+
 rm -v $LFS/usr/lib/lib{bfd,ctf,ctf-nobfd,opcodes}.{a,la}
-echo "binutils_pass2_finish" >> $/LFS/sources/install.log
+echo "binutils_pass2_finish" >> $LFS/sources/install.log
 

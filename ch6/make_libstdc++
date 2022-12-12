@@ -25,5 +25,5 @@ rm -v $LFS/usr/lib/lib{stdc++,stdc++fs,supc++}.la
 cd ../
 rm -rf build
 
-echo "libstdc++_finish" >> $/LFS/sources/install.log
+echo "libstdc++_finish" >> $LFS/sources/install.log
 

@@ -9,5 +9,5 @@ make headers
 find usr/include -type f ! -name '*.h' -delete
 cp -rv usr/include $LFS/usr
 
-echo "linux_finish" >> $/LFS/sources/install.log
+echo "linux_finish" >> $LFS/sources/install.log
 

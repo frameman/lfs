@@ -14,5 +14,5 @@ make DESTDIR=$LFS install
 
 make distclean
 
-echo "gawk_pass_1_finish" >> $/LFS/sources/install.log
+echo "gawk_pass_1_finish" >> $LFS/sources/install.log
 

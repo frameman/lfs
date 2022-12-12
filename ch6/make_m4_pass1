@@ -14,5 +14,5 @@ make DESTDIR=$LFS install
 
 make distclean
 
-echo "m4_pass_1_finish" >> $/LFS/sources/install.log
+echo "m4_pass_1_finish" >> $LFS/sources/install.log
 

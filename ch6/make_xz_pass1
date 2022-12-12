@@ -9,12 +9,14 @@ cd $LFS/sources/xz-5.2.9
             --disable-static                  \
             --docdir=/usr/share/doc/xz-5.2.9
 
-make -j3
+make 
 make DESTDIR=$LFS install
-make distclean
+
 rm -v $LFS/usr/lib/liblzma.la
 
+make distclean
 
-echo "xz_pass1_finish" >> $/LFS/sources/install.log
+
+echo "xz_pass1_finish" >> $LFS/sources/install.log
 
 
