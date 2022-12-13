@@ -23,7 +23,7 @@ mkdir -pv $LFS/tools
 #  x86_64) chown -v lfs $LFS/lib64 ;;
 #esac
 
-su - lfs
+su  lfs -c "\
 
 cat > ~/.bash_profile << "EOF"
 exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash
@@ -42,6 +42,6 @@ CONFIG_SITE=$LFS/usr/share/config.site
 export LFS LC_ALL LFS_TGT PATH CONFIG_SITE
 EOF
 
-source ~/.bash_profile
+source ~/.bash_profile"
 
 

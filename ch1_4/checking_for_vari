@@ -2,9 +2,9 @@
 
 #yum install bison byacc gcc-c++ bash binutils coreutils diffutils findutils gawk gcc grep gzip m4 make perl patch perl python3 sed tar xz
 
-#dnf update
-
 #dnf --enablerepo=powertools install texinfo
+
+dnf update
 
 
 export LC_ALL=C
