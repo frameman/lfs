@@ -13,7 +13,8 @@ esac
 
 mkdir -pv $LFS/tools
 
-###Creating a lfs usr
+### Creating a lfs usr
+
 #groupadd lfs
 #useradd -s /bin/bash -g lfs -m -k /dev/null lfs
 #passwd lfs
@@ -25,23 +26,9 @@ mkdir -pv $LFS/tools
 
 su  lfs -c "\
 
-cat > ~/.bash_profile << "EOF"
-exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash
-EOF
+sh set_ch4_2"
 
-cat > ~/.bashrc << "EOF"
-set +h
-umask 022
-LFS=/mnt/lfs
-LC_ALL=POSIX
-LFS_TGT=$(uname -m)-lfs-linux-gnu
-PATH=/usr/bin
-if [ ! -L /bin ]; then PATH=/bin:$PATH; fi
-PATH=$LFS/tools/bin:$PATH
-CONFIG_SITE=$LFS/usr/share/config.site
-export LFS LC_ALL LFS_TGT PATH CONFIG_SITE
-EOF
 
-source ~/.bash_profile"
+
 
 
