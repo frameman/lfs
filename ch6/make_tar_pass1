@@ -1,6 +1,7 @@
 #!/bin/bash
-a=$(pwd)
-sh /$a/env
+#a=$(pwd)
+#sh /$a/env
+
 cd $LFS/sources/tar-1.34
 
 ./configure --prefix=/usr                     \
