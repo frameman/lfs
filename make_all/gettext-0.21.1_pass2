@@ -15,5 +15,5 @@ if [ autopoint ]
 then
 echo "gettext 2sd is installed" >> ../make_all/install.log
 else
-echo "gettext 2sd not installed" >> ../make_all/install.log
+echo "gettext 2sd not install" >> ../make_all/install.log
 fi
