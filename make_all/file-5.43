@@ -1,5 +1,5 @@
 #!/bin/bash
-cd ../file-5.43
+cd $LFS/sources/file-5.43
 ./configure --prefix=/usr
 make -j3
 #make check
@@ -9,5 +9,5 @@ if [ /usr/bin/libmagic ]
 then
 echo "file installed" >> ../make_all/install.log
 else
-echo "file not installed" >> ../make_all/install.log
+echo "file not install" >> ../make_all/install.log
 fi
