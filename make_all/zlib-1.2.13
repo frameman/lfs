@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cd $LFS/sources/zlib-1.2.13 
+
+./configure --prefix=/usr
+
+make -j3
+make install
+rm -fv /usr/lib/libz.a
+
+if [ /usr/bin/libz ]
+then 
+echo "zlib is installed" >> ../make_all/install.log
+else
+echo "zlib not install" >> ../make_all/install.log
+fi
