@@ -11,5 +11,5 @@ if [ capsh ]
 then 
 echo "libcap is installed" >> ../make_all/install.log
 else
-echo "libcap not installed" >> ../make_all/install.log
+echo "libcap not install" >> ../make_all/install.log
 fi
