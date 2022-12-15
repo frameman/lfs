@@ -10,7 +10,7 @@ case $(uname -m) in
   ;;
 esac
 
-rm -rf build
+
 
 mkdir -v build
 cd       build
