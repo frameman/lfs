@@ -1,4 +1,6 @@
 #!/bin/bash 
+su - lfs -c "\
+su root -c"\
 sh make_binutil_pass1 
 sh make_gcc_pass1
 sh make_linux_API_header
@@ -19,5 +21,6 @@ sh make_sed_pass1
 sh make_tar_pass1
 sh make_xz_pass1
 sh make_binutil_pass2 
-sh make_gcc_pass2	
- 
+sh make_gcc_pass2\
+""
+
