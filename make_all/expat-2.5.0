@@ -18,6 +18,6 @@ if [ xmlwf ]
 then 
 echo "expat is installed" >> ../make_all/install.log
 else
-echo "expat is installed" >> ../make_all/install.log
+echo "expat not install" >> ../make_all/install.log
 fi
 
