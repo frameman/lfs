@@ -20,5 +20,5 @@ export LFS LC_ALL LFS_TGT PATH CONFIG_SITE
 EOF
 
 
-source ~/.bash_profile\
+su root -c "source ~/.bash_profile"\
 "
