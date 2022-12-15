@@ -1,6 +1,6 @@
 #!/bin/bash 
 su - lfs -c "\
-su root -c"\
+su root - c"\
 sh make_binutil_pass1 
 sh make_gcc_pass1
 sh make_linux_API_header
