@@ -42,6 +42,6 @@ if [ /usr/share/doc/tcl-8.6.13 ]
 then 
 echo "tcl is installed" >> ../make_all/install.log
 else
-echo "tcl not installed" >> ../make_all/install.log
+echo "tcl not install" >> ../make_all/install.log
 fi
 
