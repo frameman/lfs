@@ -3,7 +3,7 @@
 sh gettext-0.21.1
 sh bison-3.8.2
 sh perl-5.36.0  
-sh python3.11
+sh Python-3.11.0
 sh texinfo-7.0.1
 sh util-linux2.38
 sh man-pages-6.01
