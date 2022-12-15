@@ -1,10 +1,1 @@
-gettext installed
-bison installed
-perl installed
-python3 not install
-makeinfo --version | head -n1
-util-linux installed location: /var/lib/hwclock 
-gettext installed
-bison installed
-perl installed
-python3 not install
+
