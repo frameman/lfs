@@ -1,7 +1,8 @@
 #!/bin/bash
-
 cd ../gettext-0.21.1
+
 ./configure --disable-shared
+
 make -j3
 cp -v gettext-tools/src/{msgfmt,msgmerge,xgettext} /usr/bin
 
