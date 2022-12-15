@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ../glibc-2.36
+cd $LFS/sources/glibc-2.36
 
 sed '/MAKEFLAGS :=/s/)r/) -r/' -i Makerules
 
