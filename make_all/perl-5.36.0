@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ../perl-5.36.0
+cd $LFS/sources/perl-5.36.0
 
 sh Configure -des                                        \
              -Dprefix=/usr                               \
