@@ -1,5 +1,5 @@
 #!bin/bash
-cd ../iana-etc-20221122
+cd $LFS/sources/iana-etc-20221122
 
 cp services protocols /etc
 
