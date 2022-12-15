@@ -1,9 +1,13 @@
 #!/bin/bash
 cd $LFS/sources/bc-6.1.1 
 
+### configure
 CC=gcc ./configure --prefix=/usr -G -O3 -r
+
 make -j3
+
 #make test
+
 make install
 
 if [ bc ]
