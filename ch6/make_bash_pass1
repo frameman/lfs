@@ -1,0 +1,20 @@
+#!/bin/bash
+a=$(pwd)
+sh /$a/env
+
+cd $LFS/sources/bash-5.2.9
+
+./configure --prefix=/usr                      \
+            --build=$(sh support/config.guess) \
+            --host=$LFS_TGT                    \
+            --without-bash-malloc
+
+make -j3
+
+make DESTDIR=$LFS install
+
+ln -sv bash $LFS/bin/sh
+
+make distclean
+
+echo "bash_pass_1_finish" >> $LFS/sources/install.log

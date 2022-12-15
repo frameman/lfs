@@ -1,0 +1,16 @@
+#!/bin/bash
+#a=$(pwd)
+#sh /$a/env
+cd $LFS/sources/patch-2.7.6
+
+./configure --prefix=/usr   \
+            --host=$LFS_TGT \
+            --build=$(build-aux/config.guess)
+
+make -j3
+make DESTDIR=$LFS install
+
+make distclean
+
+echo "patch_pass1_finish" >> $LFS/sources/install.log
+

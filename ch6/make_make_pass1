@@ -1,0 +1,23 @@
+#!/bin/bash
+#a=$(pwd)
+#sh /$a/env
+cd $LFS/sources/make-4.4
+
+
+
+sed -e '/ifdef SIGPIPE/,+2 d' \
+    -e '/undef  FATAL_SIG/i FATAL_SIG (SIGPIPE);' \
+    -i src/main.c
+
+./configure --prefix=/usr   \
+            --without-guile \
+            --host=$LFS_TGT \
+            --build=$(build-aux/config.guess)
+
+make -j3
+make DESTDIR=$LFS install
+
+make distclean
+
+echo "make_pass1_finish" >> $LFS/sources/install.log
+
