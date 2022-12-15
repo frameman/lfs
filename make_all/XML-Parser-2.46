@@ -3,8 +3,11 @@
 cd $LFS/sources/XML-Parser-2.46
 
 perl Makefile.PL
-make -j4
+
+make -j3
+
 #make test
+
 make install
 
 if [ find / -name Expat.so ]
