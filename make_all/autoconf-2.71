@@ -8,7 +8,7 @@ sed -e 's/SECONDS|/&SHLVL|/'               \
 
 ./configure --prefix=/usr
 
-make -j4
+make -j3
 
 #make check
 
