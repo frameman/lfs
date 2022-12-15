@@ -52,7 +52,7 @@ sh glibc-2.36
 #sh kmod-30
 #sh elfutils-0.188
 #sh libffi-3.4.4 
-#sh Python-3.11.0 
+#sh Python-3.11.0_pass2 
 #sh wheel-0.38.4
 #sh ninja-1.11.1
 #sh meson-0.64.1
