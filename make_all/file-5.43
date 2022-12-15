@@ -1,6 +1,8 @@
 #!/bin/bash
 cd $LFS/sources/file-5.43
+
 ./configure --prefix=/usr
+
 make -j3
 #make check
 make install
