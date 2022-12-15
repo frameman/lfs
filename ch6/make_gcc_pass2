@@ -1,6 +1,5 @@
 #!/bin/bash
-#a=$(pwd)
-#sh /$a/env
+
 cd $LFS/sources/gcc-12.2.0	
 
 case $(uname -m) in
@@ -35,7 +34,10 @@ cd       build
     --disable-libvtv                               \
     --enable-languages=c,c++
 
-make -j3
+### seem it will have error with make -j4
+### fail to compile in fixincludes ../need a full stamp
+
+make 
 
 make DESTDIR=$LFS install
 
