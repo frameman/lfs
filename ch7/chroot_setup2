@@ -7,4 +7,4 @@
     PATH=/usr/bin:/usr/sbin     \
     /bin/bash --login -c "\
 sh chroot_setup3
-sh chroot_setup4
+sh chroot_setup4"
