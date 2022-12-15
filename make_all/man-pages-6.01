@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ../man-pages-6.01 
+cd $LFS/sources/man-pages-6.01 
 
 make prefix=/usr install
 
