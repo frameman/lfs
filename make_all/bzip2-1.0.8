@@ -9,7 +9,7 @@ sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
 make -f Makefile-libbz2_so
 make clean
 
-make
+make -j3
 make PREFIX=/usr install
 
 cp -av libbz2.so.* /usr/lib
@@ -25,5 +25,5 @@ if [ bzip2 ]
 then
 echo "bzip2 installed" >> ../make_all/install.log
 else
-echo "bzip2 not installed" >> ../make_all/install.log
+echo "bzip2 not install" >> ../make_all/install.log
 
