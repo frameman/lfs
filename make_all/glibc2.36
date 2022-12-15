@@ -20,9 +20,13 @@ echo "rootsbindir=/usr/sbin" > configparms
 
 make 
 make check
+
 touch /etc/ld.so.conf
+
 sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile
+
 make install
+
 sed '/RTLDLIST=/s@/usr@@g' -i /usr/bin/ldd	
 cp -v ../nscd/nscd.conf /etc/nscd.conf
 mkdir -pv /var/cache/nscd
