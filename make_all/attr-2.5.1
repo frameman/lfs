@@ -5,8 +5,11 @@ cd $LSF/sources/attr-2.5.1
             --disable-static  \
             --sysconfdir=/etc \
             --docdir=/usr/share/doc/attr-2.5.1
+
 make -j3
+
 #make check
+
 make install
 
 if [ /usr/include/attr ] 
