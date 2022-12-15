@@ -28,6 +28,7 @@ sh glibc-2.36
 #sh attr-2.5.1
 #sh acl2.3
 #sh libcap2.66
+#sh shadow-4.13
 #sh gcc-12.2.0
 #sh pkg-config-0.29.2
 #sh ncurses-6.3
@@ -35,7 +36,7 @@ sh glibc-2.36
 #sh psmisc23.5
 #sh gettext-0.21.1_pass2
 #sh bison-3.8.2_pass2
-#sh grep3.8
+#sh grep-3.8
 #sh bash-5.2.9
 #sh libtool2.4.7
 #sh gdbm-1.23
