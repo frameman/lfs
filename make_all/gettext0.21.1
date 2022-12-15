@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cd ../gettext-0.21.1
+./configure --disable-shared
+make -j3
+cp -v gettext-tools/src/{msgfmt,msgmerge,xgettext} /usr/bin
+
+make distclean
+
+if [ /usr/bin/msgfmt ]
+then
+echo "gettext installed" >> ../make_all/install.log
+else
+echo "gettext not install" >> ../make_all/install.log
+fi
+

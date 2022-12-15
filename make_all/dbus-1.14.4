@@ -1,0 +1,23 @@
+#!/bin/bash
+cd $LFS/sources/dbus-1.14.4
+
+./configure --prefix=/usr                        \
+            --sysconfdir=/etc                    \
+            --localstatedir=/var                 \
+            --runstatedir=/run                   \
+            --disable-static                     \
+            --disable-doxygen-docs               \
+            --disable-xml-docs                   \
+            --docdir=/usr/share/doc/dbus-1.14.4  \
+            --with-system-socket=/run/dbus/system_bus_socket
+
+make -j3
+make install
+ln -sfv /etc/machine-id /var/lib/dbus
+
+if [ dbus-cleanup-sockets ]
+then
+echo "dbus is installed" >> ../make_all/install.log
+else
+echo "dbus not install" >> ../make_all/install.log
+fi

@@ -1,0 +1,21 @@
+#!/bin/bash
+cd $LFS/sources/libffi-3.4.4  
+
+./configure --prefix=/usr          \
+            --disable-static       \
+            --with-gcc-arch=native \
+            --disable-exec-static-tramp
+
+make -j3
+
+#make check
+
+make install
+if [ find / -name  libffi.so ]
+then
+echo "libffi is installed" >> ../make_all/install.log
+else
+echo "libffi not install" >> ../make_all/install.log
+fi
+
+

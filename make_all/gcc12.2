@@ -1,0 +1,75 @@
+#!/bin/bash
+
+cd $LFS/sources/gcc-12.2.0 
+
+
+case $(uname -m) in
+  x86_64)
+    sed -e '/m64=/s/lib64/lib/' \
+        -i.orig gcc/config/i386/t-linux64
+  ;;
+esac
+
+rm -rf build
+
+mkdir -v build
+cd       build
+
+../configure --prefix=/usr            \
+             LD=ld                    \
+             --enable-languages=c,c++ \
+             --enable-default-pie     \
+             --enable-default-ssp     \
+             --disable-multilib       \
+             --disable-bootstrap      \
+             --with-system-zlib
+
+
+make -j3
+
+ulimit -s 32768
+
+chown -Rv tester .
+su tester -c "PATH=$PATH make -k -j3 check"
+../contrib/test_summary
+
+make install
+
+chown -v -R root:root \
+    /usr/lib/gcc/$(gcc -dumpmachine)/12.2.0/include{,-fixed}
+
+ln -svr /usr/bin/cpp /usr/lib
+
+ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/12.2.0/liblto_plugin.so \
+        /usr/lib/bfd-plugins/
+
+echo 'int main(){}' > dummy.c
+cc dummy.c -v -Wl,--verbose &> dummy.log
+readelf -l a.out | grep ': /lib'
+
+grep -E -o '/usr/lib.*/S?crt[1in].*succeeded' dummy.log
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/../../../../lib/Scrt1.o succeeded
+/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/../../../../lib/crti.o succeeded
+/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/../../../../lib/crtn.o succeeded
+
+
+grep -B4 '^ /usr/include' dummy.log
+
+
+grep 'SEARCH.*/usr/lib' dummy.log |sed 's|; |\n|g'
+
+grep "/lib.*/libc.so.6 " dummy.log
+
+grep found dummy.log
+
+mkdir -pv /usr/share/gdb/auto-load/usr/lib
+mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib
+
+if [ gcc ]
+then
+echo "gcc is installed" >> ../make_all/install.log
+else
+echo "gcc not install" >> ../make_all/install.log
+fi
+

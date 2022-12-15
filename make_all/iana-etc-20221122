@@ -1,0 +1,6 @@
+#!bin/bash
+cd ../iana-etc-20221122
+
+cp services protocols /etc
+
+echo "iana installed" >> ../make_all/install.log

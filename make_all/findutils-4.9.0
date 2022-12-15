@@ -1,0 +1,23 @@
+#!/bin/bash
+cd $LFS/sources/findutils-4.9.0
+
+case $(uname -m) in
+    i?86)   TIME_T_32_BIT_OK=yes ./configure --prefix=/usr --localstatedir=/var/lib/locate ;;
+    x86_64) ./configure --prefix=/usr --localstatedir=/var/lib/locate ;;
+esac
+
+make -j3
+
+### testing
+#chown -Rv tester .
+#su tester -c "PATH=$PATH make check"
+
+make install
+
+if [ /var/lib/locate ] 
+then
+echo "findutils is installed" >> ../make_all/install.log
+else
+echo "findutils not install" >> ../make_all/install.log
+fi
+

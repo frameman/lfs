@@ -1,0 +1,21 @@
+#!/bin/bash
+
+cd ../Python-3.11.0
+
+
+./configure --prefix=/usr   \
+            --enable-shared \
+            --without-ensurepip
+
+make -j3
+make install
+
+make distclean
+
+if [ python3 -V = "Python 3.11.0" ]
+then
+echo "python3 installed" >> ../make_all/install.log
+else
+echo "python3 not install" >> ../make_all/install.log
+fi
+

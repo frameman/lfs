@@ -1,0 +1,16 @@
+#!/bin/bash
+cd $LFS/sources/meson-0.64.1
+
+pip3 wheel -w dist --no-build-isolation --no-deps $PWD
+
+pip3 install --no-index --find-links dist meson
+install -vDm644 data/shell-completions/bash/meson /usr/share/bash-completion/completions/meson
+install -vDm644 data/shell-completions/zsh/_meson /usr/share/zsh/site-functions/_meson
+
+if [ meson ]
+then 
+echo "meson is installed" >> ../make_all/install.log
+else
+echo "meson not install" >> ../make_all/install.log
+fi
+

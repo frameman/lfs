@@ -1,0 +1,29 @@
+#!/bin/bash
+cd $LFS/sources/bash-5.2.9  
+
+./configure --prefix=/usr                      \
+            --docdir=/usr/share/doc/bash-5.2.9 \
+            --without-bash-malloc              \
+            --with-installed-readline
+
+make -j3
+
+### run the test
+#chown -Rv tester .
+#su -s /usr/bin/expect tester << EOF
+#set timeout -1
+#spawn make tests
+#expect eof
+#lassign [wait] _ _ _ value
+#exit $value
+#EOF
+
+make install
+
+if [ bashbug ] 
+then
+echo "bash is installed" >> ../make_all/install.log
+else
+echo "bash not install" >> ../make_all/install.log
+fi
+

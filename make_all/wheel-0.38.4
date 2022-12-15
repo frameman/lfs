@@ -1,0 +1,14 @@
+#!/bin/bash
+cd $LFS/sources/wheel-0.38.4
+
+PYTHONPATH=src pip3 wheel -w dist --no-build-isolation --no-deps $PWD
+
+pip3 install --no-index --find-links=dist wheel
+
+if [  wheel ]
+then 
+echo "wheel is installed" >> ../make_all/install.log
+else
+echo "wheel not install" >> ../make_all/install.log
+fi
+

@@ -1,0 +1,17 @@
+#!/bin/bash
+cd $LFS/sources/acl-2.3.1 
+
+./configure --prefix=/usr         \
+            --disable-static      \
+            --docdir=/usr/share/doc/acl-2.3.1
+
+make 
+make install
+
+if [ /usr/include/acl and /usr/share/doc/acl-2.3.1 ]
+then
+echo "acl is installed" >> ../make_all/install.log
+else
+echo "acl not install" >> ../make_all/install.log
+fi
+

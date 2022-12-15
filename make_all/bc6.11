@@ -1,0 +1,14 @@
+#!/bin/bash
+cd $LFS/sources/bc-6.1.1 
+
+CC=gcc ./configure --prefix=/usr -G -O3 -r
+make -j3
+#make test
+make install
+
+if [ bc ]
+then
+echo "bc is installed" >> ../make_all/install.log
+else
+echo "bc not installed" >> ../make_all/install.log
+fi

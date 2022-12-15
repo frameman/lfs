@@ -1,0 +1,18 @@
+#!/bin/bash
+cd $LFS/sources/libpipeline-1.5.7
+
+./configure --prefix=/usr
+
+make -j3
+
+#make test
+
+make install
+
+if [ find / -name  libpipeline.so ]
+then
+echo "libpipeline is installed" >> ../make_all/install.log
+else
+echo "libpipeline not install" >> ../make_all/install.log
+fi
+

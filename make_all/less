@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cd $LFS/sources/less-608
+./configure --prefix=/usr --sysconfdir=/etc
+
+make
+make install
+ 
+if [ less ]
+then
+echo "less is installed" >> ../make_all/install.log
+else
+echo "less not install" >> ../make_all/install.log
+fi

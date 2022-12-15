@@ -1,0 +1,19 @@
+#!/bin/bash
+
+cd $LFS/sources/gzip-1.12 
+
+./configure --prefix=/usr
+
+make -j3
+
+#make check
+
+make install
+
+if [ gzip ] 
+then
+echo "gzip is installed" >> ../make_all/install.log
+else
+echo "gzip not install" >> ../make_all/install.log
+fi
+

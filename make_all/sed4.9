@@ -1,0 +1,23 @@
+#!/bin/bash
+
+cd $LFS/sources/sed-4.9
+
+./configure --prefix=/usr
+
+make
+make html
+
+### run the test
+#chown -Rv tester .
+#su tester -c "PATH=$PATH make check"
+
+make install
+install -d -m755           /usr/share/doc/sed-4.9
+install -m644 doc/sed.html /usr/share/doc/sed-4.9
+
+if [ /usr/share/doc/sed-4.9 ] 
+then 
+echo "sed4.9 is installed" >> ../make_all/install.log
+else
+echo "sed not install" >> ../make_all/install.log
+fi

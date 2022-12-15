@@ -1,0 +1,15 @@
+#!/bin/bash
+cd $LFS/sources/psmisc-23.5
+
+./configure --prefix=/usr
+
+make -j3
+make install
+
+if [ fuser ]
+then 
+echo "psmisc is installed" >> ../make_all/install.log
+else
+echo "psmisc not install"  >> ../make_all/install.log
+fi
+

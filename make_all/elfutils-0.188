@@ -1,0 +1,21 @@
+#!/bin/bash
+cd $LFS/sources/elfutils-0.188
+
+./configure --prefix=/usr                \
+            --disable-debuginfod         \
+            --enable-libdebuginfod=dummy
+
+make -j4
+#make check
+
+make -C libelf install
+install -vm644 config/libelf.pc /usr/lib/pkgconfig
+rm /usr/lib/libelf.a
+
+if [ /usr/include/elfutils ]
+then
+echo "elfutils is installed" >> ../make_all/install.log
+else
+echo "elfutils not install" >> ../make_all/install.log
+fi
+

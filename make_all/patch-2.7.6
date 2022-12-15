@@ -1,0 +1,17 @@
+#!/bin/bash
+
+cd $LFS/sources/patch-2.7.6      
+
+./configure --prefix=/usr
+
+make -j3
+#make check
+make install
+
+if [ patch ]
+then
+echo "patch is installed" >> ../make_all/install.log
+else 
+echo "patch not install" >> ../make_all/install.log
+fi
+ 

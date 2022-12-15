@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cd ../m4-1.4.19
+
+./configure --prefix=/usr
+
+make -j3
+#make check
+make install
+
+if [ m4 ]
+then 
+echo "m4 is installed" >> ../make_all/install.log
+else
+echo "m4 not installed" >> ../make_all/install.log
+fi

@@ -1,0 +1,15 @@
+#!/bin/bash
+cd $LFS/sources/libcap-2.66
+
+sed -i '/install -m.*STA/d' libcap/Makefile
+make prefix=/usr lib=lib
+#make test
+
+make prefix=/usr lib=lib install
+
+if [ capsh ] 
+then 
+echo "libcap is installed" >> ../make_all/install.log
+else
+echo "libcap not installed" >> ../make_all/install.log
+fi

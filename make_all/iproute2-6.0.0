@@ -1,0 +1,18 @@
+#!/bin/bash
+
+cd $LFS/sources/iproute2-6.0.0 
+
+sed -i /ARPD/d Makefile
+rm -fv man/man8/arpd.8
+
+make NETNS_RUN_DIR=/run/netns
+make SBINDIR=/usr/sbin install
+mkdir -pv             /usr/share/doc/iproute2-6.0.0
+cp -v COPYING README* /usr/share/doc/iproute2-6.0.0
+
+if [ bridge ]
+then
+echo "iproute is installed" >> ../make_all/install.log
+else
+echo "iproute not install" >> ../make_all/install.log
+fi

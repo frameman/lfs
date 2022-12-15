@@ -1,0 +1,40 @@
+#!/bin/bash
+cd $LFS/sources/binutils-2.39
+
+if [ expect -c "spawn ls" = "spawn ls" ] 
+then
+
+mkdir -v build
+cd       build
+
+../configure --prefix=/usr       \
+             --sysconfdir=/etc   \
+             --enable-gold       \
+             --enable-ld=default \
+             --enable-plugins    \
+             --enable-shared     \
+             --disable-werror    \
+             --enable-64-bit-bfd \
+             --with-system-zlib
+
+make tooldir=/usr
+
+make -k check -j3
+
+grep '^FAIL:' $(find -name '*.log')
+
+make tooldir=/usr install
+
+rm -fv /usr/lib/lib{bfd,ctf,ctf-nobfd,opcodes}.a
+rm -fv /usr/share/man/man1/gprofng.1
+
+elif [ expect -c "spawn ls" = "The system has no more ptys.'\n'Ask your system administrator to create more."]
+then
+echo "binutils install fail plz complie the gcc first" >> ../make_all/install.log
+
+else
+echo "binutils install fail"
+fi
+
+
+

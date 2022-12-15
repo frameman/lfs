@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sh gettext0.21.1
+sh bison_3.8.2
+sh perl-5.36  
+sh python3.11
+sh texinfo-7.0.1
+sh util-linux2.38
+sh man-pages6.01 
+sh iana-etc-20221122 
+sh glibc2.36

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+cd $LFS/sources/grub-2.06
+
+### don't try to turn others FLAGS if you are no idea what is going on
+unset {C,CPP,CXX,LD}FLAGS
+
+./configure --prefix=/usr          \
+            --sysconfdir=/etc      \
+            --disable-efiemu       \
+            --disable-werror
+
+make -j3
+
+make install
+mv -v /etc/bash_completion.d/grub /usr/share/bash-completion/completions
+
+if [ /usr/lib/grub ]
+then
+echo "grub is installed" >> ../make_all/install.log
+else
+echo "grub not install" >> ../make_all/install.log
+fi

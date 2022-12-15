@@ -1,0 +1,19 @@
+#!/bin/bash
+
+cd $LFS/sources/gettext-0.21.1 
+./configure --prefix=/usr    \
+            --disable-static \
+            --docdir=/usr/share/doc/gettext-0.21.1
+make -j3
+
+#make check -j3
+
+make install
+chmod -v 0755 /usr/lib/preloadable_libintl.so
+
+if [ autopoint ]
+then
+echo "gettext 2sd is installed" >> ../make_all/install.log
+else
+echo "gettext 2sd not installed" >> ../make_all/install.log
+fi

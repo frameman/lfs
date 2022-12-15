@@ -1,0 +1,21 @@
+#!/bin/bash
+cd $LFS/sources/grep-3.8  
+
+sed -i "s/echo/#echo/" src/egrep.sh
+
+./configure --prefix=/usr
+
+make -j3
+
+#make check -j3
+make install
+
+if [ grep ]
+then
+echo "grep is installed" >> ../make_all/install.log
+else
+echo "grep not install" >> ../make_all/install.log
+fi
+
+
+

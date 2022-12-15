@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd ../man-pages-6.01 
+
+make prefix=/usr install
+
+echo "man-pages installed" >> ../make_all/install.log
+
+

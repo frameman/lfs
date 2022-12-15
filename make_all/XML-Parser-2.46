@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cd $LFS/sources/XML-Parser-2.46
+
+perl Makefile.PL
+make -j4
+#make test
+make install
+
+if [ find / -name Expat.so ]
+then
+echo "xml parser is installed" >> ../make_all/install.log
+else
+echo "xml parser not install" >> ../make_all/install.log
+fi
+

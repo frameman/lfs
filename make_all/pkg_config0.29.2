@@ -1,0 +1,20 @@
+#!/bash/bin
+cd $LFS/sources/pkg-config-0.29.2
+
+
+./configure --prefix=/usr              \
+            --with-internal-glib       \
+            --disable-host-tool        \
+            --docdir=/usr/share/doc/pkg-config-0.29.2
+
+make -j3
+#make check
+make install
+
+if [ /usr/share/doc/pkg-config-0.29.2 ] 
+then
+echo "pkg-config is installed" >> ../make_all/install.log
+else
+echo "pkg-config not install" >> ../make_all/install.log
+fi
+

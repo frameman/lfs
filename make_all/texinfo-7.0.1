@@ -1,0 +1,12 @@
+#!/bin/bash
+cd ../texinfo-7.0.1
+
+./configure --prefix=/usr
+
+make -j3
+make install
+
+make distclean
+
+echo "makeinfo --version | head -n1" >> ../make_all/install.log
+

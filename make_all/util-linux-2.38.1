@@ -1,0 +1,36 @@
+#!/bash/bash
+
+cd $LFS/sources/util-linux-2.38.1
+
+./configure ADJTIME_PATH=/var/lib/hwclock/adjtime \
+            --bindir=/usr/bin    \
+            --libdir=/usr/lib    \
+            --sbindir=/usr/sbin  \
+            --disable-chfn-chsh  \
+            --disable-login      \
+            --disable-nologin    \
+            --disable-su         \
+            --disable-setpriv    \
+            --disable-runuser    \
+            --disable-pylibmount \
+            --disable-static     \
+            --without-python     \
+            --docdir=/usr/share/doc/util-linux-2.38.1
+
+make -j3
+
+### run test as root is harmful 
+### to run the test please add this command
+
+#bash tests/run.sh --srcdir=$PWD --builddir=$PWD
+#chown -Rv tester .
+#su tester -c "make -k check"
+
+make install
+
+if [ colrm ]
+then 
+echo "util-linux is installed" >> ../make_all/install.log
+else
+echo "util-linux not install" >> ../make_all/install.log
+fi

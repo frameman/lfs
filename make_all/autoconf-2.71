@@ -1,0 +1,23 @@
+#!/bin/bash
+
+cd $LFS/sources/autoconf-2.71 
+
+sed -e 's/SECONDS|/&SHLVL|/'               \
+    -e '/BASH_ARGV=/a\        /^SHLVL=/ d' \
+    -i.orig tests/local.at
+
+./configure --prefix=/usr
+
+make -j4
+
+#make check
+
+make install
+
+if [ autoconf ]
+then
+echo "autoconf is installed" >> ../make_all/install.log
+else
+echo "autoconf not install" >> ../make_all/install.log
+fi
+

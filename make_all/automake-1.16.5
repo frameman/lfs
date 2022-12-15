@@ -1,0 +1,18 @@
+#!/bin/bash
+
+cd $LFS/sources/automake-1.16.5 
+
+./configure --prefix=/usr --docdir=/usr/share/doc/automake-1.16.5
+
+make -j4
+
+#make -j4 check
+
+make install
+
+if [ automake ]
+then 
+echo "automake is installed" >> ../make_all/install.log
+else
+echo "automake not install" >> ../make_all/install.log
+fi

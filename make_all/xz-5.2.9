@@ -1,0 +1,19 @@
+#!/bin/bash
+cd ../xz-5.2.9
+
+
+./configure --prefix=/usr    \
+            --disable-static \
+            --docdir=/usr/share/doc/xz-5.2.9
+
+make -j3
+make check
+make install
+ 
+if [ /usr/bin/liblzma ]
+then 
+echo "xz installed" >> ../make_all/install.log
+else 
+echo "xz not installed" >> "xz installed" >> ../make_all/install.log
+fi
+

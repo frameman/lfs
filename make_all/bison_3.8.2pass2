@@ -1,0 +1,15 @@
+#!/bin/bash
+cd $LFS/sources/bison-3.8.2 
+
+./configure --prefix=/usr --docdir=/usr/share/doc/bison-3.8.2
+
+make -j3
+#make check
+make install
+
+if [ yacc ]
+then
+echo "bison pass2 is installed" >> ../make_all/install.log
+else
+echo "bison pass2 not install" >> ../make_all/install.log
+fi

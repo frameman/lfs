@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cd $LFS/sources/MarkupSafe-2.1.1 
+
+pip3 wheel -w dist --no-build-isolation --no-deps $PWD
+
+pip3 install --no-index --no-user --find-links dist Markupsafe
+
+if [ /usr/lib/python3.11/site-packages/MarkupSafe-2.1.1.dist-info ]
+then 
+echo "markup is installed" >> ../make_all/install.log
+else
+echo "markup not install" >> ../make_all/install.log
+fi

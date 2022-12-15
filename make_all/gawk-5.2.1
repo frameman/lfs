@@ -1,0 +1,20 @@
+#!/bin/bash
+
+cd $LFS/sources/gawk-5.2.1 
+
+sed -i 's/extras//' Makefile.in
+./configure --prefix=/usr
+make -j3
+#make check
+make install
+
+mkdir -pv                                   /usr/share/doc/gawk-5.2.1
+cp    -v doc/{awkforai.txt,*.{eps,pdf,jpg}} /usr/share/doc/gawk-5.2.1
+
+if [ /usr/share/doc/gawk-5.2.1 ]
+then 
+echo 'gawk is installed' >> ../make_all/install.log
+else
+echo 'gawk not install' >> ../make_all/install.log 
+fi
+
