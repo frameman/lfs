@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo "Select LFS partition"
+ls /dev/sd*
+read partition
+mkfs -v -t ext4 $partition
+
+echo "Select LFS swap partition"
+ls /dev/sd*
+read swapp
+mkswqp $swapp
+
+LFS=/mnt/lfs
+
+mkdir -pv $LFS
+mount -v -t ext4 $partition $LFS
+/sbin/swapon -v $swapp
+
