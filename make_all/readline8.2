@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ../readline-8.2
+cd $LFS/sources/readline-8.2
 
 sed -i '/MV.*old/d' Makefile.in
 sed -i '/{OLDSUFF}/c:' support/shlib-install
