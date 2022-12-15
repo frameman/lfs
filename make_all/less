@@ -3,7 +3,7 @@
 cd $LFS/sources/less-608
 ./configure --prefix=/usr --sysconfdir=/etc
 
-make
+make -j3
 make install
  
 if [ less ]
