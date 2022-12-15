@@ -2,7 +2,7 @@
 #a=$(pwd)
 #sh /$a/env
 
-cd $LFS/sources/gcc-12.2.0/libstdc++-v3
+cd $LFS/sources/gcc-12.2.0
 
 mkdir -v build
 cd       build
