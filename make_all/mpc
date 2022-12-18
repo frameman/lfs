@@ -13,4 +13,4 @@ make html
 make install
 make install-html
 
-echo "mpc config complete" >> ../make_all/install.log
+echo "mpc config complete" >> ../../make_all/install.log
