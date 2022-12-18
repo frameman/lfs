@@ -14,4 +14,4 @@ make html
 make install
 make install-html
 
-echo "mpfr config complete"  >> ../make_all/install.log
+echo "mpfr config complete"  >> ../../make_all/install.log
