@@ -36,7 +36,7 @@ sed -i '/MAIL/s/yes/no/' /etc/default/useradd
 echo "Choose a password for user root"
 passwd root
 
-if [ /etc/default and /usr/include/shadow ]
+if [ /usr/include/shadow ]
 then
 echo "shadow is installed" >> ../make_all/install.log
 else
