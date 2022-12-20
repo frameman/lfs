@@ -5,13 +5,13 @@ sh bison-3.8.2
 sh perl-5.36.0  
 sh Python-3.11.0
 sh texinfo-7.0.1
-sh util-linux2.38
+sh util-linux-2.38.1
 sh man-pages-6.01
 sh iana-etc-20221122 
 sh glibc-2.36
-#sh zlib-1.2.13
-#sh bzip2-1.0.8 
-#sh xz-5.2.9
+sh zlib-1.2.13
+sh bzip2-1.0.8 
+sh xz-5.2.9
 #sh Zstd-1.5.2
 #sh file5.43 
 #sh readline-8.2
@@ -79,6 +79,6 @@ sh glibc-2.36
 #sh dbus-1.14.4
 #sh man-db-2.11.1
 #sh procps-ng-4.0.1  
-#sh util-linux-2.38.1
+#sh util-linux-2.38.1_pass2
 #sh e2fsprogs-1.46.5
 
