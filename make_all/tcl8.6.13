@@ -1,5 +1,5 @@
 #!/bin/bash
-cd $LFS/soueces/tcl8.6.13
+cd $LFS/sources/tcl8.6.13
 
 tar -xf ../tcl8.6.13-html.tar.gz --strip-components=1
 
@@ -40,8 +40,8 @@ cp -v -r  ../html/* /usr/share/doc/tcl-8.6.13
 
 if [ /usr/share/doc/tcl-8.6.13 ]
 then 
-echo "tcl is installed" >> ../make_all/install.log
+echo "tcl is installed" >> $LFS/sources/make_all/install.log
 else
-echo "tcl not install" >> ../make_all/install.log
+echo "tcl not install" >> $LFS/sources/make_all/install.log
 fi
 
