@@ -10,7 +10,7 @@ make -j3
 
 make install
 
-if [ find / -name Expat.so ]
+if [ expat ]
 then
 echo "xml parser is installed" >> ../make_all/install.log
 else
