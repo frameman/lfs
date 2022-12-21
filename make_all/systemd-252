@@ -37,7 +37,7 @@ systemctl disable systemd-sysupdate{,-reboot}
 
 if [ busctl ]
 then
-echo "systemd is installed" >> ../make_all/install.log
+echo "systemd is installed" >> ../../make_all/install.log
 else
-echo "systemd not install" >> ../make_all/install.log
+echo "systemd not install" >> ../../make_all/install.log
 fi
