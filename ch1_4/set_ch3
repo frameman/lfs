@@ -4,57 +4,57 @@ LFS=/mnt/lfs
 mkdir -v $LFS/sources
 chmod -v a+wt $LFS/sources
 cd $LFS/sources
-wget https://download.savannah.gnu.org/releases/acl/acl-2.3.1.tar.xz \  ## acl 2.3.1
-https://download.savannah.gnu.org/releases/attr/attr-2.5.1.tar.gz \     ## attr 2.5.1
-https://ftp.gnu.org/gnu/autoconf/autoconf-2.71.tar.xz \                 ## autoconf 2.71          
-https://ftp.gnu.org/gnu/automake/automake-1.16.5.tar.xz \               ## automake 1.16.5
-https://ftp.gnu.org/gnu/bash/bash-5.2.9.tar.gz \                        ## bash 5.2.9
-https://github.com/gavinhoward/bc/releases/download/6.1.1/bc-6.1.1.tar.xz \                       ## bc 6.1.1 
-https://ftp.gnu.org/gnu/binutils/binutils-2.39.tar.xz \                                           ## binutils 2.39
-https://ftp.gnu.org/gnu/bison/bison-3.8.2.tar.xz \                                                ## bison 3.8.2
-https://www.sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz \                                         ## bzsip2 1.0.8
-https://github.com/libcheck/check/releases/download/0.15.2/check-0.15.2.tar.gz \                  ## check 0.15.2
-https://ftp.gnu.org/gnu/coreutils/coreutils-9.1.tar.xz \                                          ## coreutils 9.1
-https://dbus.freedesktop.org/releases/dbus/dbus-1.14.4.tar.xz \                                   ## dbus 1.14.4
-https://ftp.gnu.org/gnu/dejagnu/dejagnu-1.6.3.tar.gz \                                            ## dejagnu 1.6.3
-https://ftp.gnu.org/gnu/diffutils/diffutils-3.8.tar.xz \                                          ## diffutils 3.8
-https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.46.5/e2fsprogs-1.46.5.tar.gz \   ## e2fprogs 1.46.5
-https://sourceware.org/ftp/elfutils/0.188/elfutils-0.188.tar.bz2 \                                ## elfutils 0.188
-https://prdownloads.sourceforge.net/expat/expat-2.5.0.tar.xz \                                    ## expat 2.5.0
-https://prdownloads.sourceforge.net/expect/expect5.45.4.tar.gz \                                  ## expect 5.45.4
-https://astron.com/pub/file/file-5.43.tar.gz \                                                    ## file 5.43
-https://ftp.gnu.org/gnu/findutils/findutils-4.9.0.tar.xz \                                        ## findutils 4.9.0
-https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz \                       ## flex 2.6.4
-https://ftp.gnu.org/gnu/gawk/gawk-5.2.1.tar.xz \                                                  ## gwak 5.2.1
-https://ftp.gnu.org/gnu/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz \                                        ## gcc 12.2.0
-https://ftp.gnu.org/gnu/gdbm/gdbm-1.23.tar.gz \                                                   ## gdbm 1.23
-https://ftp.gnu.org/gnu/gettext/gettext-0.21.1.tar.xz \                                           ## gettext 0.21.1
-https://ftp.gnu.org/gnu/glibc/glibc-2.36.tar.xz \                                                 ## glibc 2.36
-https://ftp.gnu.org/gnu/gmp/gmp-6.2.1.tar.xz \                                                    ## gmp 6.2.1
-https://ftp.gnu.org/gnu/grep/grep-3.8.tar.xz \                                                    ## grep 3.8
-https://ftp.gnu.org/gnu/groff/groff-1.22.4.tar.gz \                                               ## groff 1.22.4
-https://ftp.gnu.org/gnu/grub/grub-2.06.tar.xz \                                                   ## grub 2.06
-https://ftp.gnu.org/gnu/gzip/gzip-1.12.tar.xz \                                                   ## gzip 1.12
-https://github.com/Mic92/iana-etc/releases/download/20221122/iana-etc-20221122.tar.gz \           ## iana-etc 20221122
-https://ftp.gnu.org/gnu/inetutils/inetutils-2.4.tar.xz \                                          ## inetutils 2.4  
-https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz \                    ## intltool 0.51
-https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.0.0.tar.xz \
-https://pypi.org/packages/source/J/Jinja2/Jinja2-3.1.2.tar.gz \
-https://www.kernel.org/pub/linux/utils/kbd/kbd-2.5.1.tar.xz \
-https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-30.tar.xz \
-https://www.greenwoodsoftware.com/less/less-608.tar.gz \
-https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.66.tar.xz \
-https://github.com/libffi/libffi/releases/download/v3.4.4/libffi-3.4.4.tar.gz \
-https://download.savannah.gnu.org/releases/libpipeline/libpipeline-1.5.7.tar.gz \
-https://ftp.gnu.org/gnu/libtool/libtool-2.4.7.tar.xz \
-https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.0.11.tar.xz \
-https://ftp.gnu.org/gnu/m4/m4-1.4.19.tar.xz \
-https://ftp.gnu.org/gnu/make/make-4.4.tar.gz \
-https://download.savannah.gnu.org/releases/man-db/man-db-2.11.1.tar.xz \
-https://www.kernel.org/pub/linux/docs/man-pages/man-pages-6.01.tar.xz \
-https://pypi.org/packages/source/M/MarkupSafe/MarkupSafe-2.1.1.tar.gz \
-https://github.com/mesonbuild/meson/releases/download/0.64.1/meson-0.64.1.tar.gz \
-https://ftp.gnu.org/gnu/mpc/mpc-1.2.1.tar.gz \
+wget https://download.savannah.gnu.org/releases/acl/acl-2.3.1.tar.xz    ## acl 2.3.1
+wget https://download.savannah.gnu.org/releases/attr/attr-2.5.1.tar.gz  ## attr 2.5.1
+https://ftp.gnu.org/gnu/autoconf/autoconf-2.71.tar.xz                  ## autoconf 2.71          
+https://ftp.gnu.org/gnu/automake/automake-1.16.5.tar.xz                ## automake 1.16.5
+https://ftp.gnu.org/gnu/bash/bash-5.2.9.tar.gz                        ## bash 5.2.9
+https://github.com/gavinhoward/bc/releases/download/6.1.1/bc-6.1.1.tar.xz                        ## bc 6.1.1 
+https://ftp.gnu.org/gnu/binutils/binutils-2.39.tar.xz                                            ## binutils 2.39
+https://ftp.gnu.org/gnu/bison/bison-3.8.2.tar.xz                                                 ## bison 3.8.2
+https://www.sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz                                          ## bzsip2 1.0.8
+https://github.com/libcheck/check/releases/download/0.15.2/check-0.15.2.tar.gz                  ## check 0.15.2
+https://ftp.gnu.org/gnu/coreutils/coreutils-9.1.tar.xz                                           ## coreutils 9.1
+https://dbus.freedesktop.org/releases/dbus/dbus-1.14.4.tar.xz                                    ## dbus 1.14.4
+https://ftp.gnu.org/gnu/dejagnu/dejagnu-1.6.3.tar.gz                                             ## dejagnu 1.6.3
+https://ftp.gnu.org/gnu/diffutils/diffutils-3.8.tar.xz                                           ## diffutils 3.8
+https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.46.5/e2fsprogs-1.46.5.tar.gz   ## e2fprogs 1.46.5
+https://sourceware.org/ftp/elfutils/0.188/elfutils-0.188.tar.bz2                                 ## elfutils 0.188
+https://prdownloads.sourceforge.net/expat/expat-2.5.0.tar.xz                                     ## expat 2.5.0
+https://prdownloads.sourceforge.net/expect/expect5.45.4.tar.gz                                  ## expect 5.45.4
+https://astron.com/pub/file/file-5.43.tar.gz                                                     ## file 5.43
+https://ftp.gnu.org/gnu/findutils/findutils-4.9.0.tar.xz                                         ## findutils 4.9.0
+https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz                        ## flex 2.6.4
+https://ftp.gnu.org/gnu/gawk/gawk-5.2.1.tar.xz                                                   ## gwak 5.2.1
+https://ftp.gnu.org/gnu/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz                                         ## gcc 12.2.0
+https://ftp.gnu.org/gnu/gdbm/gdbm-1.23.tar.gz                                                    ## gdbm 1.23
+https://ftp.gnu.org/gnu/gettext/gettext-0.21.1.tar.xz                                            ## gettext 0.21.1
+https://ftp.gnu.org/gnu/glibc/glibc-2.36.tar.xz                                                  ## glibc 2.36
+https://ftp.gnu.org/gnu/gmp/gmp-6.2.1.tar.xz                                                     ## gmp 6.2.1
+https://ftp.gnu.org/gnu/grep/grep-3.8.tar.xz                                                     ## grep 3.8
+https://ftp.gnu.org/gnu/groff/groff-1.22.4.tar.gz                                                ## groff 1.22.4
+https://ftp.gnu.org/gnu/grub/grub-2.06.tar.xz                                                    ## grub 2.06
+https://ftp.gnu.org/gnu/gzip/gzip-1.12.tar.xz                                                    ## gzip 1.12
+https://github.com/Mic92/iana-etc/releases/download/20221122/iana-etc-20221122.tar.gz            ## iana-etc 20221122
+https://ftp.gnu.org/gnu/inetutils/inetutils-2.4.tar.xz                                           ## inetutils 2.4  
+https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz                     ## intltool 0.51
+https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.0.0.tar.xz 
+https://pypi.org/packages/source/J/Jinja2/Jinja2-3.1.2.tar.gz 
+https://www.kernel.org/pub/linux/utils/kbd/kbd-2.5.1.tar.xz 
+https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-30.tar.xz 
+https://www.greenwoodsoftware.com/less/less-608.tar.gz 
+https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.66.tar.xz 
+https://github.com/libffi/libffi/releases/download/v3.4.4/libffi-3.4.4.tar.gz 
+https://download.savannah.gnu.org/releases/libpipeline/libpipeline-1.5.7.tar.gz 
+https://ftp.gnu.org/gnu/libtool/libtool-2.4.7.tar.xz 
+https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.0.11.tar.xz 
+https://ftp.gnu.org/gnu/m4/m4-1.4.19.tar.xz 
+https://ftp.gnu.org/gnu/make/make-4.4.tar.gz 
+https://download.savannah.gnu.org/releases/man-db/man-db-2.11.1.tar.xz
+https://www.kernel.org/pub/linux/docs/man-pages/man-pages-6.01.tar.xz 
+https://pypi.org/packages/source/M/MarkupSafe/MarkupSafe-2.1.1.tar.gz 
+https://github.com/mesonbuild/meson/releases/download/0.64.1/meson-0.64.1.tar.gz 
+https://ftp.gnu.org/gnu/mpc/mpc-1.2.1.tar.gz 
 https://ftp.gnu.org/gnu/mpfr/mpfr-4.1.1.tar.xz \
 https://invisible-mirror.net/archives/ncurses/ncurses-6.3.tar.gz \
 https://github.com/ninja-build/ninja/archive/v1.11.1/ninja-1.11.1.tar.gz \
