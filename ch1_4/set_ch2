@@ -13,6 +13,6 @@ mkswqp /dev/$swapp
 LFS=/mnt/lfs
 
 mkdir -pv $LFS
-mount -v -t ext4 $partition $LFS
-/sbin/swapon -v $swapp
+mount -v -t ext4 /dev/$partition $LFS
+/sbin/swapon -v /dev/$swapp
 
