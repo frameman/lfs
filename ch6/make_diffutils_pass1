@@ -4,6 +4,8 @@
 
 cd $LFS/sources/diffutils-3.8
 
+./configure --prefix=/usr --host=$LFS_TGT
+
 make -j3
 
 make DESTDIR=$LFS install
