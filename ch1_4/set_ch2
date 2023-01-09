@@ -3,12 +3,12 @@
 echo "Select LFS partition"
 ls /dev/sd*
 read partition
-mkfs -v -t ext4 $partition
+mkfs -v -t ext4 /dev/$partition
 
 echo "Select LFS swap partition"
 ls /dev/sd*
 read swapp
-mkswqp $swapp
+mkswqp /dev/$swapp
 
 LFS=/mnt/lfs
 
