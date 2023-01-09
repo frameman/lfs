@@ -1,26 +1,26 @@
 #!/bin/bash 
 su - lfs -c "\
-su root - c"\
-sh make_binutil_pass1 
-sh make_gcc_pass1
-sh make_linux_API_header
-sh make_glibc_pass1
-sh make_libstdc++
-sh make_m4_pass1
-sh make_ncurses-6.3_pass1
-sh make_bash_pass1	
-sh make_coreutils	
-sh make_file_pass1
-sh make_findutils_pass1 
-sh make_gawk_pass1
-sh make_grep	
-sh make_gzip_pass1
-sh make_make_pass1
-sh make_patch_pass1
-sh make_sed_pass1
-sh make_tar_pass1
-sh make_xz_pass1
-sh make_binutil_pass2 
-sh make_gcc_pass2\
+su root -c "\
+sh binutils-2.39_pass1
+sh gcc-12.2.0_pass1
+sh linux_API_header
+sh glibc-2.36
+sh libstdc++
+sh m4-1.4.19
+sh ncurses-6.3
+sh bash-5.2.9	
+sh coreutils-9.1	
+sh file-5.43
+sh findutils-4.9.0
+sh gawk-5.2.1
+sh grep-3.8	
+sh gzip-1.12
+sh make-4.4
+sh patch-2.7.6
+sh sed-4.9
+sh tar-1.34
+sh xz-5.2.9
+sh binutils-2.39_pass2
+sh gcc-12.2.0_pass2 \
 ""
 
