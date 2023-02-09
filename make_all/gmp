@@ -1,5 +1,5 @@
 #!/bin/bash
-cd $LFS/sources/gcc-12.2.0/gmp
+cd $LFS/sources/gmp
 
 cp -v configfsf.guess config.guess
 cp -v configfsf.sub   config.sub
