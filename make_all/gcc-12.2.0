@@ -68,8 +68,8 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib
 
 if [ gcc ]
 then
-echo "gcc is installed" >> ../make_all/install.log
+echo "gcc is installed" >> ../../make_all/install.log
 else
-echo "gcc not install" >> ../make_all/install.log
+echo "gcc not install" >> ../../make_all/install.log
 fi
 
