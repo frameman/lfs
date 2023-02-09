@@ -1,5 +1,5 @@
 #!/bin/bash
-cd $LFS/sources/gcc-12.2.0/mpc
+cd $LFS/sources/mpc
 
 ./configure --prefix=/usr    \
             --disable-static \
