@@ -3,14 +3,28 @@
 cd ../Python-3.11.0
 
 
-./configure --prefix=/usr   \
-            --enable-shared \
-            --without-ensurepip
-
+./configure --prefix=/usr        \
+            --enable-shared      \
+            --with-system-expat  \
+            --with-system-ffi    \
+            --enable-optimizations
 make -j3
 
 make install
 
+cat > /etc/pip.conf << EOF
+[global]
+root-user-action = ignore
+disable-pip-version-check = true
+EOF
+
+install -v -dm755 /usr/share/doc/python-3.11.1/html
+
+tar --strip-components=1  \
+    --no-same-owner       \
+    --no-same-permissions \
+    -C /usr/share/doc/python-3.11.1/html \
+    -xvf ../python-3.11.1-docs-html.tar.bz2
 make distclean
 
 if [ python3 -V = "Python 3.11.0" ]
